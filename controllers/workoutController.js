@@ -147,6 +147,8 @@ const deleteOneWorkout = async (req,res) => {
                 data: { error: `Cant't find workout with the id '${workoutID}'`}
             });
         }
+
+        res.status(200).send({ status: "OK", data: deletedWorkout})
     } catch (error) {
         res
         .status(error?.status || 500)
